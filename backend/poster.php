@@ -17,7 +17,7 @@
                     <img src="./images/<?=$poster['img'];?>" alt="" style="width:60px;height:80px">
                 </div>
                 <div style="width:24.5%">
-                    <input type="text" name="name" value="<?=$poster['name'];?>" style="width:90%">
+                    <input type="text" name="name[]" value="<?=$poster['name'];?>" style="width:90%">
                 </div>
                 <div style="width:24.5%">
                     <button>往上</button>
@@ -34,6 +34,7 @@
                     </select>
                 </div>
             </div>
+            <input type="hidden" name="id[]" value="<?=$poster['id'];?>">
             <?php endforeach;?>
         </div>
         <div class="ct">
