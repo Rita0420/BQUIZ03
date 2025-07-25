@@ -28,7 +28,7 @@
                 ABC影城票價全面八折優惠1個月
             </marquee>
         </div>
-        <div id="mm">
+        <div id="mm" style="height:500px;overflow:auto;">
             <?php
 
 if(isset($_POST['acc'])){
