@@ -144,3 +144,4 @@ class DB{
 }
 
 $Poster=new DB('posters');
+$Movies=new DB('movies');
