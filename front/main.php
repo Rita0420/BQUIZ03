@@ -101,7 +101,7 @@ $posters=$Poster->all(['sh'=>1]," order by `rank` ");
         </div>
     </div>
 </div>
-</div>
+
 <div class="half">
     <h1>院線片清單</h1>
     <div class="rb tab" style="width:95%;">
@@ -125,30 +125,31 @@ let slider = setInterval(() => {
 }, 2000);
 
 $('.btns').hover(
-    function () {
+    function() {
         clearInterval(slider);
-        
-    }, function () {
-        slider=setInterval(() => {
+
+    },
+    function() {
+        slider = setInterval(() => {
             animater();
         }, 2000);
     }
 );
 
-$('.poster-btn').on('click',function(){
-    let idx=$(this).index();
+$('.poster-btn').on('click', function() {
+    let idx = $(this).index();
     animater(idx);
 })
 
 function animater(r) {
     let now = $('.poster:visible');
-    if(r==undefined){
+    if (r == undefined) {
         rank++;
         if (rank > $('.poster').length - 1) {
             rank = 0;
         }
-    }else{
-        rank=r;
+    } else {
+        rank = r;
     }
     let next = $('.poster').eq(rank);
     let ani = $(now).data('ani');
@@ -174,26 +175,28 @@ function animater(r) {
     }
 }
 
-let p=0;
-$('.left,.right').on('click',function(){
-    let arrow=$(this).attr('class');
+let p = 0;
+$('.left,.right').on('click', function() {
+    let arrow = $(this).attr('class');
     switch (arrow) {
         case 'left':
-            if(p > 0){
+            if (p > 0) {
                 p--;
             }
             break;
 
         case 'right':
-            if(p < $('.poster-btn').length-4){
+            if (p < $('.poster-btn').length - 4) {
                 p++;
             }
             break;
-    
+
         default:
             break;
     }
 
-    $('.poster-btn').animate({right:p*80},500)
+    $('.poster-btn').animate({
+        right: p * 80
+    }, 500)
 })
 </script>
