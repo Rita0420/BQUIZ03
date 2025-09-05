@@ -54,7 +54,7 @@ if(isset($_SESSION['admin'])):
           if(file_exists($file)){
             include_once $file;
           }else{
-            include_once "./front/main.php";
+            include_once "./backend/main.php";
           }
            ?>
 
